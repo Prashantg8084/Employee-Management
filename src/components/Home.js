@@ -10,25 +10,28 @@ const Home = () => {
   const [loadingButton, setLoadingButton] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   let apiUrl = "https://reqres.in/api/users?page="+pageNumber;
-  //   fetch(apiUrl)
-  //     .then((response) => response.json())
-  //     .then((actualData) => {
-  //       console.log(actualData.data);
-  //       setTimeout(() => {
-  //         setIsLoading(false);
-  //         setPageNumber(pageNumber + 1);
-  //         setEmployee([...employee, ...actualData.data]);
-  //       }, 3000);
-  //     });
-  // }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+    let apiUrl = "https://reqres.in/api/users?page=" + pageNumber;
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((actualData) => {
+        console.log(actualData.data);
+        setTimeout(() => {
+          setIsLoading(false);
+          setPageNumber(pageNumber + 1);
+          setEmployee([...employee, ...actualData.data]);
+        }, 3000);
+      });
+  }, []);
 
   const dataCall = () => {
     setIsLoading(true);
-    setLoadingButton(false);
+    if(pageNumber >=2){
+
+      setLoadingButton(false);
+    }
     setPageNumber(pageNumber + 1);
     let apiUrl = `https://reqres.in/api/users?page=${pageNumber}`;
 
@@ -56,11 +59,7 @@ const Home = () => {
       {/* here comes the api section */}
 
       <div className="employees-data">
-        {
-          <button onClick={() => dataCall()}>
-            Load Data
-          </button>
-        }
+
         {/* {isLoading && <p>Loading</p>} */}
 
         <h1>My Employees</h1>
@@ -84,16 +83,23 @@ const Home = () => {
             </>
           ))}
 
-          {isLoading &&
-            <>
+
+        {isLoading &&
+          <>
             <CSkeleton />
             <CSkeleton />
             <CSkeleton />
             <CSkeleton />
             <CSkeleton />
             <CSkeleton />
-            </>
-          }
+          </>
+        }
+
+        {loadingButton &&
+          <button onClick={() => dataCall()}>
+            Load Data
+          </button>
+        }
       </div>
     </>
   );
