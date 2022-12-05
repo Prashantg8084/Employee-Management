@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(190, 139, 239);
+  /* background-image: url(F:\EmployeeProject\employee\src\assests\images\stars.jpg); */
+  
+}
+.container {
+  font-size: 20px;
+}
+.header {
+  width: 100%;
+  /* border: 2px solid red; */
+  height: 80px;
+  position: relative;
+  margin-bottom: 40px;
+  background-color: #af6eec;
+
+}
+.header .half{
+    width: 47%;
+    display: inline-block;
+    height: 80px;
+    margin-top: 20px;
+}
+.header .left{
+    margin-left: 40px;
+    color:beige;
+}
+.header .right{
+    text-align: right;
+    margin-right: 20px;
+}
+.header button{
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(190, 139, 239);
+    margin: 0 10px;
+    border:none;
+    cursor: pointer;
+}
+.header button:hover{
+    background-color: aqua;
+}
+

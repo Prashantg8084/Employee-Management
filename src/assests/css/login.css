@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.main .form-container{
+    /* height: 300px; */
+    width:400px;
+    background-color: rgb(178, 178, 239);
+    margin:0 auto;
+    margin-top: 50px;
+    padding: 15px;
+    /* border: 2px solid red; */
+    position: relative;
+    /* box-shadow: 0 0 10px rgb(233, 235, 191); */
+    border-radius: 10px;
+
+   
+}
+.main .message{
+    width:400px;
+    background-color: rgb(245, 83, 19);
+    margin:0 auto;
+    /* margin-top: 50px; */
+    padding: 15px;
+    /* border: 2px solid red; */
+    color:white;
+    font-size: 14px;
+    text-align: center;
+    /* box-shadow: 0 0 10px rgb(233, 235, 191); */
+    border-radius: 10px;
+}
+.main .success-message{
+    background-color: rgba(25, 197, 68, 0.971);
+}
+.main .message p{
+    position: relative;
+}
+.icon-class{
+    position: absolute;
+    right: 0px;
+}
+.row{
+    display:inline-block;
+     /* flex-direction: column; */
+     margin-bottom: 15px; 
+     width: 100%    ;
+}
+.row input{
+    width:100%;
+    /* height:30px; */
+    /* color : red; */
+    font-size: 1.1rem;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+}
+input:focus{
+    border:1px solid rgb(29, 96, 241)
+}
+input.required{
+    border: 1px solid red;
+}
+.error-message{
+ font-size: 13px;
+ color: red;
+ font-style: italic;
+ 
+}
+label{
+    margin-bottom: 5px;
+    font-size: 18px;
+    width: 100%;
+    display: inline-block;
+}
+.forget-password {
+    font-size: 12px;
+    text-decoration: underline;
+    
+}
+.forget-password p{
+    text-decoration: underline;
+}
+.submit{
+    min-width:80px;
+    padding: 10px;
+    border-radius: 10px;
+    
+    /* position: absolute;
+    right: 15px; */
+    outline:none;
+    border:none;
+    background-color: rgb(9, 230, 116);
+    font-size: 1rem;
+    /* margin-right: 100px; */
+    cursor: pointer;
+
+}
+.button{
+    width: 100%;
+    display: inline-block;
+    /* text-align: right; */
+    
+}
+.button span{
+    text-align: left;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.button .submit{
+    float: right;
+}
+.submit:hover{
+    background-color: rgb(24, 224, 6);
+}
